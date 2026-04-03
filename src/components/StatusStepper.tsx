@@ -19,7 +19,7 @@ export function StatusStepper({ consulta }: Props) {
   const currentIndex = getStepIndex(consulta.status);
 
   return (
-    <div className="space-y-1">
+    <div className="space-y-2 rounded-xl border border-white/10 bg-background/40 p-4">
       <p className="text-xs font-mono text-muted-foreground mb-2 truncate">
         IPTU: {consulta.iptu}
       </p>

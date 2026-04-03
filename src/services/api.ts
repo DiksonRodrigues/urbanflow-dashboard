@@ -1,4 +1,4 @@
-import type { Consulta, DadosExtraidos, HistoricoItem } from "@/types/consulta";
+﻿import type { Consulta, DadosExtraidos, HistoricoItem } from "@/types/consulta";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -7,12 +7,29 @@ const delay = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // Mock data for when backend is unavailable
 const mockDados: DadosExtraidos = {
-  zonaDeUso: "ZM-2",
-  coeficiente: "2.0",
-  recuo: "5m",
-  gabarito: "15m",
+  sql: "000.000.0000-0",
+  enderecoCompleto: "Rua Exemplo, 100",
+  bairro: "Centro",
+  subprefeitura: "Sé",
+  areaTerreno: "0",
+  zonaSigla: "ZM-2",
+  zonaNome: "Zona Mista",
+  leiVigente: "Lei 16.402/16",
+  macroarea: "—",
+  caMin: "—",
+  caBasico: "—",
+  caMax: "—",
   taxaOcupacao: "0.5",
-  observacoes: "Zona Mista de média densidade",
+  gabaritoAltura: "15m",
+  recuos: "—",
+  restricaoPatrimonio: "—",
+  restricaoManancial: "—",
+  restricaoAeroportuaria: "—",
+  restricaoMelhoramento: "—",
+  mapaUrl: "",
+  legendaZoneamento: [],
+  dimensoesLote: [],
+  observacoes: "Mock",
 };
 
 let mockIdCounter = 1;
@@ -44,15 +61,7 @@ export async function getStatus(id: string): Promise<Consulta> {
     if (!res.ok) throw new Error("Backend error");
     return res.json();
   } catch {
-    await delay(800);
-    // Simulate progression
-    return {
-      id,
-      iptu: "000.000.0000-0",
-      status: "aguardando_captcha",
-      captchaImage: "/placeholder.svg",
-      createdAt: new Date().toISOString(),
-    };
+    throw new Error("Backend offline");
   }
 }
 
@@ -75,6 +84,13 @@ export async function enviarCaptcha(id: string, resposta: string): Promise<Consu
       createdAt: new Date().toISOString(),
     };
   }
+}
+
+export async function obterCaptcha(id: string): Promise<string> {
+  const res = await fetch(`${BASE_URL}/captcha/${id}`);
+  if (!res.ok) throw new Error("Backend error");
+  const data = await res.json();
+  return data.image as string;
 }
 
 export async function confirmarDados(id: string, dados: DadosExtraidos): Promise<Consulta> {
@@ -112,4 +128,10 @@ export async function getHistorico(): Promise<HistoricoItem[]> {
       { id: "h3", data: "2026-03-25", iptu: "078.032.0091-3", zonaDeUso: "ZC", status: "erro" },
     ];
   }
+}
+
+export async function regenPdf(id: string): Promise<Consulta> {
+  const res = await fetch(`${BASE_URL}/regen/${id}`, { method: "POST" });
+  if (!res.ok) throw new Error("Backend error");
+  return res.json();
 }

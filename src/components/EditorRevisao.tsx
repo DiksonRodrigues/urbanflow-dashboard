@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -36,9 +36,9 @@ export function EditorRevisao({ consulta, onConfirmar }: Props) {
     setDados((prev) => ({ ...prev, [key]: value }));
 
   return (
-    <Card className="border-primary/30">
+    <Card className="border-white/10 bg-card/70 backdrop-blur">
       <CardHeader className="pb-3">
-        <CardTitle className="text-base flex items-center gap-2">
+        <CardTitle className="text-base flex items-center gap-2 text-foreground">
           <FileCheck className="h-4 w-4 text-primary" />
           Revisão — IPTU: <span className="font-mono">{consulta.iptu}</span>
         </CardTitle>
@@ -54,14 +54,14 @@ export function EditorRevisao({ consulta, onConfirmar }: Props) {
                 id={key}
                 value={dados[key]}
                 onChange={(e) => update(key, e.target.value)}
-                className="font-mono text-sm"
+                className="font-mono text-sm bg-background/60 border-white/10 focus-visible:ring-primary/40"
               />
             </div>
           ))}
         </div>
         <Button
           onClick={() => onConfirmar(consulta.id, dados)}
-          className="w-full mt-5"
+          className="w-full mt-5 bg-gradient-to-r from-primary to-accent text-slate-950 shadow-lg shadow-primary/20 hover:from-primary/90 hover:to-accent/90"
         >
           Confirmar e Gerar PDF
         </Button>

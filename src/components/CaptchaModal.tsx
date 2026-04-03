@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+﻿import { useEffect, useRef, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -38,7 +38,7 @@ export function CaptchaModal({ consulta, onSubmit }: Props) {
   return (
     <Dialog open={isOpen}>
       <DialogContent
-        className="sm:max-w-md"
+        className="sm:max-w-md border-white/10 bg-card/80 backdrop-blur"
         onInteractOutside={(e) => e.preventDefault()}
       >
         <DialogHeader>
@@ -53,7 +53,7 @@ export function CaptchaModal({ consulta, onSubmit }: Props) {
         </DialogHeader>
 
         <div className="flex flex-col items-center gap-4 py-2">
-          <div className="w-full rounded-md border bg-muted/50 p-4 flex items-center justify-center min-h-[100px]">
+          <div className="w-full rounded-md border border-white/10 bg-background/60 p-4 flex items-center justify-center min-h-[100px]">
             <img
               src={consulta?.captchaImage || "/placeholder.svg"}
               alt="Captcha"
@@ -67,12 +67,23 @@ export function CaptchaModal({ consulta, onSubmit }: Props) {
             onChange={(e) => setResposta(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
             placeholder="Digite o captcha..."
-            className="text-center text-lg font-mono tracking-widest"
+            className="text-center text-lg font-mono tracking-widest bg-background/60 border-white/10 focus-visible:ring-primary/40"
           />
 
-          <Button onClick={handleSubmit} className="w-full" disabled={!resposta.trim()}>
+          <Button onClick={handleSubmit} className="w-full bg-gradient-to-r from-primary to-accent text-slate-950" disabled={!resposta.trim()}>
             Enviar Captcha
           </Button>
+
+          {consulta?.id && (
+            <a
+              href={`/captcha/${consulta.id}`}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-muted-foreground underline underline-offset-4"
+            >
+              Abrir captcha em nova janela
+            </a>
+          )}
         </div>
       </DialogContent>
     </Dialog>

@@ -1,0 +1,497 @@
+[
+  {
+    "distrito": "Distritos",
+    "subprefeitura": "Subprefeituras",
+    "regiao": "Regiões"
+  },
+  {
+    "distrito": "Bela Vista",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "Bom Retiro",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "Cambuci",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "Consolação",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "Liberdade",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "República",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "Santa Cecília",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "Sé",
+    "subprefeitura": "Sé",
+    "regiao": "Centro"
+  },
+  {
+    "distrito": "Aricanduva",
+    "subprefeitura": "Aricanduva/Formosa/Carrão",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Carrão",
+    "subprefeitura": "Aricanduva/Formosa/Carrão",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Vila Formosa",
+    "subprefeitura": "Aricanduva/Formosa/Carrão",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Cidade Tiradentes",
+    "subprefeitura": "Cidade Tiradentes",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Ermelino Matarazzo",
+    "subprefeitura": "Ermelino Matarazzo",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Ponte Rasa",
+    "subprefeitura": "Ermelino Matarazzo",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Guaianases",
+    "subprefeitura": "Guaianases",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Lajeado",
+    "subprefeitura": "Guaianases",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Itaim Paulista",
+    "subprefeitura": "Itaim Paulista",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Vila Curuçá",
+    "subprefeitura": "Itaim Paulista",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Cidade Líder",
+    "subprefeitura": "Itaquera",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Itaquera",
+    "subprefeitura": "Itaquera",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "José Bonifácio",
+    "subprefeitura": "Itaquera",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Parque do Carmo",
+    "subprefeitura": "Itaquera",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Água Rasa",
+    "subprefeitura": "Mooca",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Belém",
+    "subprefeitura": "Mooca",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Brás",
+    "subprefeitura": "Mooca",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Moóca",
+    "subprefeitura": "Mooca",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Pari",
+    "subprefeitura": "Mooca",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Tatuapé",
+    "subprefeitura": "Mooca",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Artur Alvim",
+    "subprefeitura": "Penha",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Cangaíba",
+    "subprefeitura": "Penha",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Penha",
+    "subprefeitura": "Penha",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Vila Matilde",
+    "subprefeitura": "Penha",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Iguatemi",
+    "subprefeitura": "São Mateus",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "São Mateus",
+    "subprefeitura": "São Mateus",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "São Rafael",
+    "subprefeitura": "São Mateus",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Jardim Helena",
+    "subprefeitura": "São Miguel",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "São Miguel",
+    "subprefeitura": "São Miguel",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Vila Jacuí",
+    "subprefeitura": "São Miguel",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Sapopemba",
+    "subprefeitura": "Sapopemba",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "São Lucas",
+    "subprefeitura": "Vila Prudente",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Vila Prudente",
+    "subprefeitura": "Vila Prudente",
+    "regiao": "Leste"
+  },
+  {
+    "distrito": "Cachoeirinha",
+    "subprefeitura": "Casa Verde/Cachoeirinha",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Casa Verde",
+    "subprefeitura": "Casa Verde/Cachoeirinha",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Limão",
+    "subprefeitura": "Casa Verde/Cachoeirinha",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Brasilândia",
+    "subprefeitura": "Freguesia/Brasilândia",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Freguesia do Ó",
+    "subprefeitura": "Freguesia/Brasilândia",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Jaçanã",
+    "subprefeitura": "Jaçanã/Tremembé",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Tremembé",
+    "subprefeitura": "Jaçanã/Tremembé",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Anhanguera",
+    "subprefeitura": "Perus",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Perus",
+    "subprefeitura": "Perus",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Jaraguá",
+    "subprefeitura": "Pirituba",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Pirituba",
+    "subprefeitura": "Pirituba",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "São Domingos",
+    "subprefeitura": "Pirituba",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Mandaqui",
+    "subprefeitura": "Santana/Tucuruvi",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Santana",
+    "subprefeitura": "Santana/Tucuruvi",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Tucuruvi",
+    "subprefeitura": "Santana/Tucuruvi",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Vila Guilherme",
+    "subprefeitura": "Vila Maria/Vila Guilherme",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Vila Maria",
+    "subprefeitura": "Vila Maria/Vila Guilherme",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Vila Medeiros",
+    "subprefeitura": "Vila Maria/Vila Guilherme",
+    "regiao": "Norte"
+  },
+  {
+    "distrito": "Butantã",
+    "subprefeitura": "Butantã",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Morumbi",
+    "subprefeitura": "Butantã",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Raposo Tavares",
+    "subprefeitura": "Butantã",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Rio Pequeno",
+    "subprefeitura": "Butantã",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Vila Sônia",
+    "subprefeitura": "Butantã",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Barra Funda",
+    "subprefeitura": "Lapa",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Jaguara",
+    "subprefeitura": "Lapa",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Jaguaré",
+    "subprefeitura": "Lapa",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Lapa",
+    "subprefeitura": "Lapa",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Perdizes",
+    "subprefeitura": "Lapa",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Vila Leopoldina",
+    "subprefeitura": "Lapa",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Alto de Pinheiros",
+    "subprefeitura": "Pinheiros",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Itaim Bibi",
+    "subprefeitura": "Pinheiros",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Jardim Paulista",
+    "subprefeitura": "Pinheiros",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Pinheiros",
+    "subprefeitura": "Pinheiros",
+    "regiao": "Oeste"
+  },
+  {
+    "distrito": "Campo Limpo",
+    "subprefeitura": "Campo Limpo",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Capão Redondo",
+    "subprefeitura": "Campo Limpo",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Vila Andrade",
+    "subprefeitura": "Campo Limpo",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Cidade Dutra",
+    "subprefeitura": "Capela do Socorro",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Grajaú",
+    "subprefeitura": "Capela do Socorro",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Socorro",
+    "subprefeitura": "Capela do Socorro",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Cidade Ademar",
+    "subprefeitura": "Cidade Ademar",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Pedreira",
+    "subprefeitura": "Cidade Ademar",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Cursino",
+    "subprefeitura": "Ipiranga",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Ipiranga",
+    "subprefeitura": "Ipiranga",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Sacomã",
+    "subprefeitura": "Ipiranga",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Jabaquara",
+    "subprefeitura": "Jabaquara",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Jardim Ângela",
+    "subprefeitura": "M'Boi Mirim",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Jardim São Luís",
+    "subprefeitura": "M'Boi Mirim",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Marsilac",
+    "subprefeitura": "Parelheiros",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Parelheiros",
+    "subprefeitura": "Parelheiros",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Campo Belo",
+    "subprefeitura": "Santo Amaro",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Campo Grande",
+    "subprefeitura": "Santo Amaro",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Santo Amaro",
+    "subprefeitura": "Santo Amaro",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Moema",
+    "subprefeitura": "Vila Mariana",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Saúde",
+    "subprefeitura": "Vila Mariana",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Vila Mariana",
+    "subprefeitura": "Vila Mariana",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Município de São Paulo",
+    "subprefeitura": "Vila Mariana",
+    "regiao": "Sul"
+  },
+  {
+    "distrito": "Instituto",
+    "subprefeitura": "Fonte: Prefeitura do Município de São Paulo. /",
+    "regiao": "Sul"
+  }
+]

@@ -21,11 +21,33 @@ export const CONSULTA_STEPS: ConsultaStep[] = [
 ];
 
 export interface DadosExtraidos {
-  zonaDeUso: string;
-  coeficiente: string;
-  recuo: string;
-  gabarito: string;
+  sql: string;
+  enderecoCompleto: string;
+  bairro: string;
+  subprefeitura: string;
+  areaTerreno: string;
+
+  zonaSigla: string;
+  zonaNome: string;
+  leiVigente: string;
+  macroarea: string;
+
+  caMin: string;
+  caBasico: string;
+  caMax: string;
   taxaOcupacao: string;
+  gabaritoAltura: string;
+  recuos: string;
+
+  restricaoPatrimonio: string;
+  restricaoManancial: string;
+  restricaoAeroportuaria: string;
+  restricaoMelhoramento: string;
+
+  mapaUrl: string;
+  legendaZoneamento?: string[];
+  dimensoesLote?: string[];
+  arruamento?: string;
   observacoes: string;
 }
 

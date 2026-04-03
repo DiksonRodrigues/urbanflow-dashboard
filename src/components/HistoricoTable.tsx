@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import {
   Table,
   TableBody,
@@ -12,11 +12,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Download, Search } from "lucide-react";
 import type { HistoricoItem } from "@/types/consulta";
-import { getHistorico } from "@/services/api";
+import { getHistorico, regenPdf } from "@/services/api";
 
 export function HistoricoTable() {
   const [items, setItems] = useState<HistoricoItem[]>([]);
   const [filtro, setFiltro] = useState("");
+  const [loadingId, setLoadingId] = useState<string | null>(null);
 
   useEffect(() => {
     getHistorico().then(setItems);
@@ -34,19 +35,19 @@ export function HistoricoTable() {
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
           placeholder="Buscar por IPTU..."
-          className="pl-9"
+          className="pl-9 bg-background/60 border-white/10 focus-visible:ring-primary/40"
         />
       </div>
 
-      <div className="rounded-md border">
+      <div className="rounded-xl border border-white/10 bg-background/40">
         <Table>
           <TableHeader>
-            <TableRow>
-              <TableHead>Data</TableHead>
-              <TableHead>IPTU</TableHead>
-              <TableHead>Zona de Uso</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead className="text-right">Ações</TableHead>
+            <TableRow className="border-white/10">
+              <TableHead className="text-muted-foreground">Data</TableHead>
+              <TableHead className="text-muted-foreground">IPTU</TableHead>
+              <TableHead className="text-muted-foreground">Zona de Uso</TableHead>
+              <TableHead className="text-muted-foreground">Status</TableHead>
+              <TableHead className="text-right text-muted-foreground">Ações</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -58,7 +59,7 @@ export function HistoricoTable() {
               </TableRow>
             ) : (
               filtered.map((item) => (
-                <TableRow key={item.id}>
+                <TableRow key={item.id} className="border-white/10">
                   <TableCell className="font-mono text-xs">
                     {new Date(item.data).toLocaleDateString("pt-BR")}
                   </TableCell>
@@ -67,6 +68,7 @@ export function HistoricoTable() {
                   <TableCell>
                     <Badge
                       variant={item.status === "concluido" ? "default" : "destructive"}
+                      className={item.status === "concluido" ? "bg-primary/20 text-primary border border-primary/30" : ""}
                     >
                       {item.status === "concluido" ? "Concluído" : "Erro"}
                     </Badge>
@@ -80,6 +82,26 @@ export function HistoricoTable() {
                         </a>
                       </Button>
                     )}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="ml-2"
+                      onClick={async () => {
+                        try {
+                          setLoadingId(item.id);
+                          await regenPdf(item.id);
+                          const updated = await getHistorico();
+                          setItems(updated);
+                        } catch (err) {
+                          window.alert("Falha ao re-gerar o PDF. Verifique se o backend esta rodando em http://localhost:8000");
+                        } finally {
+                          setLoadingId(null);
+                        }
+                      }}
+                      disabled={loadingId === item.id}
+                    >
+                      {loadingId === item.id ? "Gerando..." : "Re-gerar PDF"}
+                    </Button>
                   </TableCell>
                 </TableRow>
               ))

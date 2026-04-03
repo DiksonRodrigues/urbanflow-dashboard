@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
-import type { Consulta, DadosExtraidos } from "@/types/consulta";
+import type { Consulta } from "@/types/consulta";
 import * as api from "@/services/api";
 
 export function useConsulta() {
@@ -35,28 +35,32 @@ export function useConsulta() {
     (id: string) => {
       if (pollingRef.current[id]) return;
 
-      let step = 0;
-      const stages: Consulta["status"][] = [
-        "acessando_prefeitura",
-        "aguardando_captcha",
-      ];
+      pollingRef.current[id] = setInterval(async () => {
+        try {
+          const status = await api.getStatus(id);
+          updateConsulta(id, status);
 
-      pollingRef.current[id] = setInterval(() => {
-        if (step < stages.length) {
-          const status = stages[step];
-          updateConsulta(id, { status });
-
-          if (status === "aguardando_captcha") {
-            updateConsulta(id, {
-              status,
-              captchaImage: "/placeholder.svg",
-            });
+          if (status.status === "aguardando_captcha" && status.captchaImage) {
             setCaptchaConsultaId(id);
             playBeep();
+          }
+
+          if (status.status === "concluido" || status.status === "erro") {
             clearInterval(pollingRef.current[id]);
             delete pollingRef.current[id];
+
+            setConsultas((prev) => {
+              const allDone = prev.every(
+                (c) => c.id === id ? true : c.status === "concluido" || c.status === "erro"
+              );
+              if (allDone) setIsProcessing(false);
+              return prev;
+            });
           }
-          step++;
+        } catch {
+          // backend offline: stop polling to avoid spam
+          clearInterval(pollingRef.current[id]);
+          delete pollingRef.current[id];
         }
       }, 2000);
     },
@@ -79,34 +83,11 @@ export function useConsulta() {
       updateConsulta(id, { status: "extraindo_dados" });
 
       const result = await api.enviarCaptcha(id, resposta);
-      updateConsulta(id, {
-        status: "revisao",
-        dadosExtraidos: result.dadosExtraidos,
-      });
+      updateConsulta(id, result);
     },
     [updateConsulta]
   );
 
-  const confirmar = useCallback(
-    async (id: string, dados: DadosExtraidos) => {
-      updateConsulta(id, { status: "gerando_pdf" });
-      const result = await api.confirmarDados(id, dados);
-      updateConsulta(id, {
-        status: "concluido",
-        pdfUrl: result.pdfUrl,
-      });
-
-      // Check if all are done
-      setConsultas((prev) => {
-        const allDone = prev.every(
-          (c) => c.id === id ? true : c.status === "concluido" || c.status === "erro"
-        );
-        if (allDone) setIsProcessing(false);
-        return prev;
-      });
-    },
-    [updateConsulta]
-  );
 
   // Cleanup polling on unmount
   useEffect(() => {
@@ -123,6 +104,5 @@ export function useConsulta() {
     captchaConsulta,
     iniciar,
     responderCaptcha,
-    confirmar,
   };
 }
