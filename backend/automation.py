@@ -830,8 +830,30 @@ async def fetch_geosampa(iptu: str, settings: AutomationSettings) -> tuple[Dados
                 "count": 1,
             },
         )
+        lote_features = lote_payload.get("features") or []
 
-    lote_features = lote_payload.get("features") or []
+        # Fallback: se nao encontrou com o digito, tenta sem o digito
+        if not lote_features and settings.geosampa_lote_field_digito and parsed["digito"]:
+            lote_cql_no_digit = (
+                f"{settings.geosampa_lote_field_setor}='{parsed['setor']}' AND "
+                f"{settings.geosampa_lote_field_quadra}='{parsed['quadra']}' AND "
+                f"{settings.geosampa_lote_field_lote}='{parsed['lote']}'"
+            )
+            lote_payload = await wfs_get_json(
+                client,
+                settings.geosampa_wfs_url,
+                {
+                    "service": "WFS",
+                    "version": "2.0.0",
+                    "request": "GetFeature",
+                    "typeName": settings.geosampa_lote_layer,
+                    "outputFormat": "application/json",
+                    "cql_filter": lote_cql_no_digit,
+                    "count": 1,
+                },
+            )
+            lote_features = lote_payload.get("features") or []
+
     if not lote_features:
         return DadosExtraidos(observacoes="Lote fiscal nao encontrado para o IPTU informado."), None, None
 
