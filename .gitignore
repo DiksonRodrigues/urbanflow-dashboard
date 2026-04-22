@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+node-portable
+node-v20.zip
+output/
+backend/.env
+backend/uvicorn.out
+backend/uvicorn.err
+vite.out
+vite.err
